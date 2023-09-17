@@ -8,7 +8,9 @@ export default function App() {
   const [todoData, setTodoData] = useState([])
   const [value, setValue] = useState("");
 
-  
+  const handleRemoveAllClick=()=>{
+    setTodoData([]);
+  }  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -34,6 +36,7 @@ export default function App() {
       <div className="w-full p-6 m-4 bg-white rounded shadow-sm lg:w-3/4 lg:max-w-lg">
         <div className="flex justify-between mb-3">
           <h1>할 일 목록</h1>
+          <button onClick={handleRemoveAllClick}>Delete All</button>
         </div>
         
         <Lists todoData={todoData} setTodoData={setTodoData} handleClick={handleClick}/>
